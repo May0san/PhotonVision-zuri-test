@@ -40,10 +40,10 @@ public class PhotonVisionSubsystem extends SubsystemBase {
   public static final Transform3d camToBot = new Transform3d(
     new Pose3d(
 
-      Units.inchesToMeters(14),
+      0,//Units.inchesToMeters(14),
       0,
-      Units.inchesToMeters(6),
-      new Rotation3d()
+      0,//Units.inchesToMeters(6),
+      new Rotation3d(0,0,0)
     
     ),
     

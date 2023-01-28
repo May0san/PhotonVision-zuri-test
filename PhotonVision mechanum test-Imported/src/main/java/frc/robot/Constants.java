@@ -20,9 +20,9 @@ public final class Constants {
         // ++ MOTOR CONTORLLER IDS ---------------------------------------------------------
         // CAN
         public static final int frontLeftID = 4;
-        public static final int frontRightID = 3;
-        public static final int backLeftID = 2;
-        public static final int backRightID = 1;
+        public static final int frontRightID = 5;
+        public static final int backLeftID = 3;
+        public static final int backRightID = 2;
         // ++ ---------------------------------------------------------------
         // ~~ There are the positions of the mecanum wheels in meters
         public static final Translation2d frontLeftMeters = new Translation2d(0.257175,0.254);

@@ -58,13 +58,13 @@ public class RobotContainer {
   // ++ SUBSYSTEMS AND COMMANDS ========================================
   // SUBSYSTEMS -------------------
     // ++ robot subsystems
-  //private final DriveSubsystem m_DriveSubsystem = new DriveSubsystem();
+  private final DriveSubsystem m_DriveSubsystem = new DriveSubsystem();
     // ++ "utility subsystems"
   private final ShuffleboardSubsystem m_Shuffleboardsubsystem = new ShuffleboardSubsystem();
   
   // COMMANDS--------------------
     // ++ teleop commands
-  //private final TeleopPIDDriveCommand m_PIDDriveCommand = new TeleopPIDDriveCommand(m_DriveSubsystem, primaryController);
+  private final TeleopPIDDriveCommand m_PIDDriveCommand = new TeleopPIDDriveCommand(m_DriveSubsystem, primaryController);
 
     // ++ auto commands
   // private final AutonomousPIDTaxiCommand m_AutonomousPIDTaxiCommand = new AutonomousPIDTaxiCommand(m_DriveSubsystem);
@@ -75,7 +75,7 @@ public class RobotContainer {
   public RobotContainer() {
 
     // ++ command stuff
-    //m_DriveSubsystem.setDefaultCommand(m_PIDDriveCommand);
+    m_DriveSubsystem.setDefaultCommand(m_PIDDriveCommand);
 
     m_photonVisionSubsystem.setDefaultCommand(m_photonVisionCommand);
 
