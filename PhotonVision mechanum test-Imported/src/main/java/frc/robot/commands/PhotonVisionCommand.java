@@ -5,6 +5,7 @@
 package frc.robot.commands;
 
 import frc.robot.subsystems.PhotonVisionSubsystem;
+import edu.wpi.first.math.geometry.Pose3d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
@@ -16,6 +17,15 @@ public class PhotonVisionCommand extends CommandBase {
   double targX;
   double targY;
   double targZ;
+  int id;
+  Pose3d botPose;
+  double botX;
+  double botY;
+  double botSpin;
+
+  
+
+
   /**
    * Creates a new ExampleCommand.
    *
@@ -35,14 +45,23 @@ public class PhotonVisionCommand extends CommandBase {
   @Override
   public void execute() {
     if (m_subsystem.returnBestTarget() != null){
+      botPose = m_subsystem.checkRobotPosition();
       targX = m_subsystem.returnBestTarget().getBestCameraToTarget().getX();
       targY = m_subsystem.returnBestTarget().getBestCameraToTarget().getY();
       targZ = m_subsystem.returnBestTarget().getBestCameraToTarget().getZ();
+      id = m_subsystem.returnBestTarget().getFiducialId();
+      botX = botPose.getX();
+      botY = botPose.getY();
+      botSpin = botPose.getRotation().getAngle();
 
       SmartDashboard.putNumber("target X dist", targX);
       SmartDashboard.putNumber("target Y dist", targY);
       SmartDashboard.putNumber("target Z dist", targZ);
+      SmartDashboard.putNumber("robot X", botX);
+      SmartDashboard.putNumber("robot Y", botY);
+      SmartDashboard.putNumber("robot rotation", botSpin);
       SmartDashboard.putNumber("target dist", Math.sqrt((targX*targX)+(targY*targY)+(targZ*targZ)));
+      SmartDashboard.putNumber("target ID", id);
     }
   }
 

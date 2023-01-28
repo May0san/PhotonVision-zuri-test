@@ -8,12 +8,12 @@ public class SimulatedFieldPositions {
 
     // :D distances measured in inches from center of field and rotations in degrees from positive x-axis
 
-    public VisionTargetArea id1 = new VisionTargetArea(new Translation2d(20,54), new Translation2d(2,2), 90, 1);
-    public VisionTargetArea id2 = new VisionTargetArea(new Translation2d(-20,54), new Translation2d(2,2), 90, 2);
-    public VisionTargetArea id3 = new VisionTargetArea(new Translation2d(20,-54), new Translation2d(2,2), -90, 3);
-    public VisionTargetArea id5 = new VisionTargetArea(new Translation2d(-20,-54), new Translation2d(2,2), -90, 5);
+    public static VisionTargetArea id1 = new VisionTargetArea(new Translation2d(20,54), new Translation2d(2,2), 90, 1);
+    public static VisionTargetArea id2 = new VisionTargetArea(new Translation2d(-20,54), new Translation2d(2,2), 90, 2);
+    public static VisionTargetArea id3 = new VisionTargetArea(new Translation2d(20,-54), new Translation2d(2,2), -90, 3);
+    public static VisionTargetArea id5 = new VisionTargetArea(new Translation2d(-20,-54), new Translation2d(2,2), -90, 5);
 
-    public VisionTargetArea getTarget(int id){
+    public static VisionTargetArea getTarget(int id){
         switch(id){
 
         case 1:
